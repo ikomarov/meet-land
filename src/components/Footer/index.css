@@ -27,6 +27,7 @@
   padding: 8px 15px; /* Немного уменьшенный отступ для мобильных */
   font-size: 12px;
   display: inline-list-item;
+  text-decoration: underline;
 }
 
 /* Медиа-запрос для экранов больше 768px */

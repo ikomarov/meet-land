@@ -40,3 +40,14 @@ a:hover {
 .accent-bg {
   background-color: #ff74c1; /* Фоновый акцентный розовый цвет */
 }
+
+/* Установка курсора по умолчанию для всего содержимого сайта */
+body, p, div, span, h1, h2, h3, h4, h5, h6 {
+  cursor: default;
+}
+
+/* Стиль курсора для интерактивных элементов */
+a, button, input, textarea, select {
+  cursor: pointer;
+}
+
