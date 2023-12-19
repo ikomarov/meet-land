@@ -1,66 +1,87 @@
 .features-container {
   background-color: white;
   text-align: center;
-  padding: 60px 60px 120px;
+  padding: 40px 20px; /* Уменьшенный отступ для мобильных */
 }
 
 .features-title {
   color: #3498db;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  font-size: 28px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24px; /* Меньший размер шрифта для мобильных */
 }
 
 .features-description {
   color: #666;
-  margin-bottom: 80px;
-  font-size: 18px;
+  margin-bottom: 40px; /* Уменьшенный отступ снизу для мобильных */
+  font-size: 16px; /* Меньший размер шрифта */
 }
 
 .features-list {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-direction: column; /* Вертикальное выравнивание для мобильных */
+  align-items: center;
 }
 
 .feature-item {
-  max-width: 350px;
-  min-height: 300px;
-  padding: 30px;
-  margin: 20px;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg, #ff74c1, #ffb6c1); /* Обновленный градиентный фон */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  animation: fadeIn 1s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white; /* Белый цвет текста для контраста */
+  max-width: 100%; /* Полная ширина на мобильных */
+  min-height: auto; /* Авто высота для мобильных */
+  padding: 20px; /* Уменьшенный отступ для мобильных */
+  margin: 10px 0; /* Уменьшенный отступ для мобильных */
+  border-radius: 10px; /* Немного меньше скругление */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #ff74c1, #ffb6c1);
 }
 
 .feature-item:nth-child(even) {
-  background: linear-gradient(135deg, #4ecdc4, #a1d6e2); /* Градиент для четных элементов */
+  background: linear-gradient(135deg, #4ecdc4, #a1d6e2);
 }
 
 .feature-item h3 {
-  margin-bottom: 15px;
-  font-size: 1.4rem;
   color: white;
+  margin-bottom: 10px;
+  font-size: 1.2rem; /* Уменьшенный размер шрифта */
 }
 
 .feature-item p {
-  font-size: 1rem;
-  text-align: center;
-  color: #ffffff; /* Темно-серый цвет */
+  color: white;
+  font-size: 0.9rem; /* Еще меньший размер шрифта */
 }
 
-.feature-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
+/* Медиа-запрос для экранов больше 768px */
+@media (min-width: 768px) {
+  .features-container {
+    padding: 60px 60px 120px;
+  }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  .features-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 28px;
+  }
+
+  .features-description {
+    margin-bottom: 80px;
+    font-size: 18px;
+  }
+
+  .features-list {
+    flex-direction: row; /* Горизонтальное выравнивание для больших экранов */
+    justify-content: space-around;
+  }
+
+  .feature-item {
+    max-width: 350px;
+    min-height: 300px;
+    padding: 30px;
+    margin: 20px;
+  }
+
+  .feature-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .feature-item p {
+    font-size: 1rem;
+  }
 }

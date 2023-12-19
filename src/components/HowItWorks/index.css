@@ -1,54 +1,87 @@
 .how-it-works-container {
   background-color: white;
-  padding: 60px 60px 120px;
+  padding: 40px 20px; /* Уменьшенные отступы для мобильных */
   text-align: center;
 }
 
 .how-it-works-title {
   color: #3498db;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  font-size: 28px;
+  margin-top: 30px; /* Уменьшенный верхний отступ */
+  margin-bottom: 30px; /* Уменьшенный нижний отступ */
+  font-size: 24px; /* Меньший размер шрифта для мобильных */
 }
 
 .how-it-works-description {
   color: #666;
-  margin-bottom: 80px;
-  font-size: 18px;
+  margin-bottom: 40px; /* Уменьшенный нижний отступ */
+  font-size: 16px; /* Меньший размер шрифта */
 }
+
 .cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 32px;
+  margin-bottom: 20px; /* Уменьшенный нижний отступ */
 }
 
 .card {
-  width: 300px;
-  margin: 40px;
+  width: 100%; /* Полная ширина для мобильных устройств */
+  margin: 20px; /* Уменьшенные отступы вокруг карточек */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  overflow: hidden; /* Обрезает контент, выходящий за границы рамки */
 }
 
 .card img {
-  width: 100%;
-  height: auto;
-  display: block; /* Убираем пробел под изображением */
-  margin-bottom: 40px;
+  margin-bottom: 20px; /* Уменьшенный нижний отступ для изображений */
 }
 
 .card-content {
   padding: 15px;
-  text-align: left;
 }
 
 .card-content h3 {
-  margin-top: 20px;
-  color: #3498db;
+  margin-top: 10px; /* Уменьшенный верхний отступ */
 }
 
 .card-content p {
-  margin-top: 20px;
-  color: #666;
+  margin-top: 10px; /* Уменьшенный верхний отступ */
+}
+
+/* Медиа-запрос для экранов больше 768px */
+@media (min-width: 768px) {
+  .how-it-works-container {
+    padding: 60px 60px 120px;
+  }
+
+  .how-it-works-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 28px;
+  }
+
+  .how-it-works-description {
+    margin-bottom: 80px;
+    font-size: 18px;
+  }
+
+  .cards {
+    margin-bottom: 32px;
+  }
+
+  .card {
+    width: 300px; /* Оригинальная ширина карточек */
+    margin: 40px; /* Оригинальные отступы */
+  }
+
+  .card img {
+    margin-bottom: 40px; /* Оригинальный нижний отступ для изображений */
+  }
+
+  .card-content h3 {
+    margin-top: 20px; /* Оригинальный верхний отступ */
+  }
+
+  .card-content p {
+    margin-top: 20px; /* Оригинальный верхний отступ */
+  }
 }

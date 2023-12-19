@@ -1,13 +1,13 @@
 .faq-container {
-  padding: 60px 60px 120px;
+  padding: 40px 20px; /* Меньший отступ для мобильных устройств */
   background: linear-gradient(to right, #6dd5ed, #2193b0); /* Градиент от нежно-голубого к синему */
   text-align: center;
 }
 
 .faq-title {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  font-size: 28px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24px; /* Меньший размер шрифта для мобильных устройств */
   color: white;
 }
 
@@ -27,28 +27,48 @@
   justify-content: space-between;
   cursor: pointer;
   padding: 10px;
-  background-color: transparent; /* Убран фон */
-  font-size: 18px; /* Больший размер шрифта для вопроса */
-  font-weight: bold; /* Делаем текст вопроса жирным */
+  font-size: 16px; /* Уменьшенный размер шрифта для мобильных устройств */
+  font-weight: bold;
 }
 
 .arrow-icon {
   transition: transform 0.3s ease;
   width: 16px;
-  margin-left: 10px; /* Добавляем отступ для иконки */
+  margin-left: 10px;
 }
 
 .flipped {
-  transform: rotate(180deg); /* Переворачиваем иконку на 180 градусов */
+  transform: rotate(180deg);
 }
 
 .faq-answer {
   color: #666;
   padding: 10px;
-  display: none; /* Скрыто по умолчанию */
-  font-size: 16px; /* Немного меньший размер шрифта для ответа */
+  display: none;
+  font-size: 14px; /* Еще меньший размер шрифта для мобильных устройств */
 }
 
 .faq-item.active .faq-answer {
-  display: block; /* Отображаем при активации */
+  display: block;
+}
+
+/* Медиа-запрос для экранов больше 768px */
+@media (min-width: 768px) {
+  .faq-container {
+    padding: 60px 60px 120px;
+  }
+
+  .faq-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 28px;
+  }
+
+  .faq-question {
+    font-size: 18px;
+  }
+
+  .faq-answer {
+    font-size: 16px;
+  }
 }

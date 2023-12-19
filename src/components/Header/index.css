@@ -2,34 +2,38 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 15px; /* Уменьшенный отступ для мобильных устройств */
   background: linear-gradient(to right, #3498db, #4ecdc4);
   color: white;
 }
 
 .brand-name {
   font-weight: bold;
-  font-size: 1.5rem; /* Увеличенный размер для лучшей видимости */
-  color: #ff74c1; /* Яркий акцентный цвет */
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4); /* Тень для добавления глубины и читаемости */
-  padding: 5px 10px; /* Небольшой отступ для визуального разделения */
-  border-radius: 8px; /* Скругление углов для мягкого вида */
-  background: rgba(255, 255, 255, 0.2); /* Слабый фон для контраста с градиентом */
-  transition: background-color 0.3s, color 0.3s; /* Плавный переход цвета и фона */
+  font-size: 1.2rem; /* Меньший размер шрифта для мобильных устройств */
+  color: #ff74c1;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  padding: 5px 8px; /* Небольшой отступ для мобильных */
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .brand-name:hover {
-  background-color: rgba(255, 255, 255, 0.4); /* Изменение фона при наведении */
-  color: #3498db; /* Изменение цвета текста при наведении */
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #3498db;
 }
 
 .download-button {
   background-color: #ff74c1;
-  padding: 8px 15px;
+  padding: 8px 12px; /* Немного уменьшенный отступ для мобильных */
   border-radius: 5px;
   color: white;
   text-decoration: none;
   transition: background-color 0.3s;
+}
+
+.download-button:hover {
+  background-color: #f06292;
 }
 
 .button-go-block {
@@ -40,39 +44,35 @@
 }
 
 a.go {
-  padding: 14px 60px;
+  padding: 10px 40px; /* Уменьшенный размер для мобильных */
   margin-top: 16px;
-}
-
-.download-button:hover {
-  background-color: #f06292;
 }
 
 .header {
   display: flex;
+  flex-direction: column; /* Столбцовое расположение для мобильных устройств */
   align-items: center;
-  justify-content: space-evenly;
-  padding: 60px 20px;
-  background: linear-gradient(to right, #3498db, #4ecdc4); /* Обновленный градиентный фон */
+  padding: 40px 10px; /* Уменьшенный отступ для мобильных */
+  background: linear-gradient(to right, #3498db, #4ecdc4);
   color: white;
-  min-height: 600px;
+  min-height: 500px; /* Уменьшенная минимальная высота для мобильных */
 }
 
 .header-content {
-  flex: 1;
   padding: 20px;
+  text-align: center;
 }
 
 .title {
-  font-size: 3rem; /* Увеличенный размер шрифта */
-  color: #ffffff; /* Белый цвет для лучшей видимости */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень текста для улучшения читаемости */
+  font-size: 2rem; /* Уменьшенный размер шрифта для заголовка */
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
   animation: fadeInUp 1s ease-out;
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 1rem; /* Уменьшенный размер шрифта для описания */
   animation: fadeInUp 1.5s ease-out;
   margin-bottom: 20px;
 }
@@ -89,16 +89,63 @@ a.go {
 }
 
 .header-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Обрезает содержимое, выходящее за границы */
+  width: 100%; /* Полная ширина на мобильных */
+  padding: 20px 0; /* Дополнительный отступ */
 }
 
 .header-image img {
-  max-width: 100%;
+  max-width: 80%; /* Меньший размер изображения */
   height: auto;
-  border-radius: 15px; /* Скругление углов изображения */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень для добавления глубины */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+}
+
+/* Медиа-запрос для экранов больше 768px */
+@media (min-width: 768px) {
+  .top-bar {
+    padding: 10px 20px;
+  }
+
+  .brand-name {
+    font-size: 1.5rem;
+    padding: 5px 10px;
+  }
+
+  .download-button {
+    padding: 8px 15px;
+  }
+
+  a.go {
+    padding: 14px 60px;
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 60px 20px;
+    min-height: 600px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .header-image img {
+    max-width: 100%;
+  }
 }

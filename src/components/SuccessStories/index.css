@@ -1,38 +1,37 @@
 .success-stories-container {
-  background: linear-gradient(to right, #ffdde1, #ee9ca7); /* Светлый и теплый градиентный фон */
+  background: linear-gradient(to right, #ffdde1, #ee9ca7); /* Градиентный фон */
   text-align: center;
   color: #333;
-  padding: 60px 0 120px;
+  padding: 40px 20px; /* Уменьшенные отступы для мобильных */
 }
 
 .success-stories-title {
   color: white;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  font-size: 28px;
+  margin-top: 30px; /* Уменьшенный верхний отступ */
+  margin-bottom: 30px; /* Уменьшенный нижний отступ */
+  font-size: 24px; /* Меньший размер шрифта для мобильных */
 }
 
 .success-stories-description {
   color: #666666;
-  margin-bottom: 80px;
-  font-size: 18px;
+  margin-bottom: 40px; /* Уменьшенный нижний отступ */
+  font-size: 16px; /* Меньший размер шрифта */
 }
 
 .stories {
   display: flex;
+  flex-direction: column; /* Вертикальное выравнивание для мобильных */
   width: 100%;
   overflow: hidden;
 }
 
 .story {
-  max-width: 300px;
+  max-width: 100%; /* Полная ширина для мобильных устройств */
   padding: 20px;
   background: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  flex: 0 0 33.333%;
-  animation: scroll 10s linear infinite;
-  margin: 20px;
+  margin: 10px 0; /* Уменьшенные отступы вокруг историй */
 }
 
 .story h3 {
@@ -42,6 +41,35 @@
 
 .story p {
   color: #666;
+}
+
+/* Медиа-запрос для экранов больше 768px */
+@media (min-width: 768px) {
+  .success-stories-container {
+    padding: 60px 0 120px;
+  }
+
+  .success-stories-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 28px;
+  }
+
+  .success-stories-description {
+    margin-bottom: 80px;
+    font-size: 18px;
+  }
+
+  .stories {
+    flex-direction: row; /* Горизонтальное выравнивание на больших экранах */
+  }
+
+  .story {
+    max-width: 300px;
+    flex: 0 0 33.333%;
+    margin: 20px;
+    animation: scroll 10s linear infinite;
+  }
 }
 
 @keyframes scroll {

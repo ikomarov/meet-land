@@ -1,17 +1,36 @@
 .security-and-privacy-container {
   text-align: center;
   background-color: white;
-  padding: 60px 60px 120px;
+  padding: 40px 20px; /* Уменьшенные отступы для мобильных устройств */
 }
 
 .security-and-privacy-title {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  font-size: 28px;
-  color: #4ecdc4; /* или другой цвет, соответствующий вашей цветовой схеме */
+  margin-top: 30px; /* Уменьшенный верхний отступ */
+  margin-bottom: 30px; /* Уменьшенный нижний отступ */
+  font-size: 24px; /* Меньший размер шрифта для мобильных устройств */
+  color: #4ecdc4;
 }
 
 .security-and-privacy-description {
   color: #666;
-  padding: 60px 60px 120px;
+  padding: 20px; /* Уменьшенные отступы для мобильных */
+  font-size: 16px; /* Меньший размер шрифта */
+}
+
+/* Медиа-запрос для экранов больше 768px */
+@media (min-width: 768px) {
+  .security-and-privacy-container {
+    padding: 60px 60px 120px;
+  }
+
+  .security-and-privacy-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 28px;
+  }
+
+  .security-and-privacy-description {
+    padding: 60px 60px 120px;
+    font-size: 18px;
+  }
 }
