@@ -11,7 +11,7 @@
   font-size: 18px; /* Уменьшенный размер шрифта для мобильных */
 }
 
-.terms-link {
+.news-link {
   color: white;
   padding: 8px 15px; /* Немного уменьшенный отступ для мобильных */
   text-decoration: none;
@@ -19,12 +19,14 @@
   transition: color 0.3s, border-color 0.3s;
   border: 2px solid white;
   font-size: 14px; /* Уменьшенный размер шрифта для мобильных */
-  display: inline-block; /* Для корректного выравнивания */
   margin-top: 10px; /* Дополнительный отступ сверху */
 }
 
-.terms-link:hover {
-  color: #2675a6;
+.terms-link {
+  color: white;
+  padding: 8px 15px; /* Немного уменьшенный отступ для мобильных */
+  font-size: 12px;
+  display: inline-list-item;
 }
 
 /* Медиа-запрос для экранов больше 768px */
@@ -34,13 +36,8 @@
   }
 
   .footer-cta-about {
-    margin-bottom: 30px;
     margin-top: 40px;
-    font-size: 20px; /* Возвращаем оригинальный размер шрифта */
-  }
-
-  .terms-link {
-    padding: 10px 20px;
     font-size: 16px; /* Возвращаем оригинальный размер шрифта */
+    display: inline-block;
   }
 }

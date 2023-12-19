@@ -23,6 +23,12 @@
   color: #3498db;
 }
 
+.news-button {
+  border: 1px solid ;
+  color: white;
+  border-radius: 5px;
+}
+
 .download-button {
   background-color: #ff74c1;
   padding: 8px 12px; /* Немного уменьшенный отступ для мобильных */
@@ -42,6 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
 }
 
 a.go {

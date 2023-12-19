@@ -6,7 +6,7 @@ import React from "react";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Meet - Найдите свою любовь в telegram',
+  title: 'Meet - Приложение для знакомств в telegram',
   description: 'Meet - приложение для знакомств, которое помогает людям находить интересные знакомства, дружбу и любовь. Присоединяйтесь к нам сегодня и начните своё путешествие к счастью.'
 }
 

@@ -6,7 +6,7 @@ const MainHeader: React.FC = () => {
     <>
       <div className="top-bar">
         <span className="brand-name">Meet</span>
-        <a className="download-button" href="https://t.me/meet_met_bot?start=landingMainHeader">
+        <a target="_blank" className="download-button" href="https://t.me/meet_met_bot?start=landingMainHeader">
           Начать общение
         </a>
       </div>
@@ -17,7 +17,8 @@ const MainHeader: React.FC = () => {
             Встречайте приложение "Meet", где каждый может найти свою вторую половинку...
           </p>
           <div className="button-go-block">
-            <a className="download-button go" href="https://t.me/meet_met_bot?start=landingMainHeaderGo">Перейти</a>
+            <a target="_blank" className="news-button go" href="https://t.me/meet_news_ru">Новости Meet</a>
+            <a target="_blank" className="download-button go" href="https://t.me/meet_met_bot?start=landingMainHeaderGo">Перейти к Meet</a>
           </div>
         </div>
         <div className="header-image">

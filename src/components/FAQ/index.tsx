@@ -1,16 +1,10 @@
 'use client'
-
 import React, { useState } from 'react';
 import './index.css';
+import {faqs} from "../../consts/faqs";
 
 const FAQ: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const faqs = [
-    { question: "Как зарегистрироваться?", answer: "Ответ на вопрос о регистрации..." },
-    { question: "Какие функции безопасности используются?", answer: "Ответ на вопрос о безопасности..." },
-    // Добавьте дополнительные вопросы и ответы
-  ];
 
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);

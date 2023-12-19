@@ -15,7 +15,7 @@ const ContactUs: React.FC = () => {
         <p><strong>Email: </strong>meet.met.bot@gmail.com</p>
       </div>
       <div className="contact-us-button">
-        <a className="download-button go" href="https://t.me/meet_met_bot?start=landingMainAbout">
+        <a target="_blank" className="download-button go" href="https://t.me/meet_met_bot?start=landingMainAbout">
           Перейти в чат
         </a>
       </div>
