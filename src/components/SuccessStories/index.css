@@ -1,0 +1,57 @@
+.success-stories-container {
+  background: linear-gradient(to right, #ffdde1, #ee9ca7); /* Светлый и теплый градиентный фон */
+  text-align: center;
+  color: #333;
+  padding: 60px 0 120px;
+}
+
+.success-stories-title {
+  color: white;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 28px;
+}
+
+.success-stories-description {
+  color: #666666;
+  margin-bottom: 80px;
+  font-size: 18px;
+}
+
+.stories {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.story {
+  max-width: 300px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  flex: 0 0 33.333%;
+  animation: scroll 10s linear infinite;
+  margin: 20px;
+}
+
+.story h3 {
+  color: #4ecdc4;
+  margin-bottom: 10px;
+}
+
+.story p {
+  color: #666;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

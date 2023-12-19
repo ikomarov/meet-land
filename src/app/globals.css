@@ -1,27 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f8f8f8; /* Светлый фон для контраста с цветовой палитрой */
+  color: #333; /* Основной цвет текста */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: #3498db; /* Основной цвет заголовков */
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+a {
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  color: #3498db; /* Основной цвет ссылок */
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #4ecdc4; /* Цвет ссылок при наведении */
+}
+
+/* Стили для акцентных элементов */
+.accent {
+  color: #ff74c1; /* Акцентный розовый цвет */
+}
+
+.accent-bg {
+  background-color: #ff74c1; /* Фоновый акцентный розовый цвет */
 }
