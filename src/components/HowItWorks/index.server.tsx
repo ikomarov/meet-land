@@ -50,6 +50,9 @@ const HowItWorks: React.FC = () => {
           </div>
         </div>
       </div>
+      <a className="download-button go" href="https://t.me/meet_met_bot?start=landingHowItWorks">
+        Попробовать
+      </a>
     </div>
   );
 };

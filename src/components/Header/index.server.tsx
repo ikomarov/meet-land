@@ -6,7 +6,7 @@ const MainHeader: React.FC = () => {
     <>
       <div className="top-bar">
         <span className="brand-name">Meet</span>
-        <a className="download-button" href="https://t.me/meet_met_bot?start=landingMainHeader">Скачать Приложение</a>
+        <a className="download-button" href="https://t.me/meet_met_bot?start=landingMainHeader">Начать знакомиться</a>
       </div>
       <div className="header">
         <div className="header-content">

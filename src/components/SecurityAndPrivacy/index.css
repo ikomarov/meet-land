@@ -1,0 +1,17 @@
+.security-and-privacy-container {
+  text-align: center;
+  background-color: white;
+  padding: 60px 60px 120px;
+}
+
+.security-and-privacy-title {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #4ecdc4; /* или другой цвет, соответствующий вашей цветовой схеме */
+}
+
+.security-and-privacy-description {
+  color: #666;
+  padding: 60px 60px 120px;
+}

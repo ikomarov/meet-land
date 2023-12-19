@@ -4,10 +4,7 @@ import './index.css';
 const SuccessStories: React.FC = () => {
   return (
     <div className="success-stories-container">
-      <h2 className="success-stories-title">Истории Любви с Meet</h2>
-      <p className="success-stories-description">
-        Вдохновляющие реальные истории пар, которые нашли друг друга благодаря "Meet".
-      </p>
+      <h2 className="success-stories-title">Истории любви с Meet</h2>
       <div className="stories">
         <div className="story">
           <h3>Анна и Максим</h3>
