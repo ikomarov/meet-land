@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'
 import './index.css';
 
 const HowItWorks: React.FC = () => {
@@ -12,7 +13,7 @@ const HowItWorks: React.FC = () => {
         <div className="card">
           <img
             src={"30.jpeg"}
-            alt="Meet steps 1"
+            alt="Meet step 1"
           />
           <div className="card-content">
             <h3>Регистрация</h3>
@@ -22,7 +23,7 @@ const HowItWorks: React.FC = () => {
         <div className="card">
           <img
             src={"46.jpeg"}
-            alt="Meet steps 2"
+            alt="Meet step 2"
           />
           <div className="card-content">
             <h3>Настройка профиля</h3>
@@ -32,7 +33,7 @@ const HowItWorks: React.FC = () => {
         <div className="card">
           <img
             src={"55.jpeg"}
-            alt="Meet steps 3"
+            alt="Meet step 3"
           />
           <div className="card-content">
             <h3>Поиск партнеров</h3>
@@ -42,7 +43,7 @@ const HowItWorks: React.FC = () => {
         <div className="card">
           <img
             src={"51.jpeg"}
-            alt="Meet steps 3"
+            alt="Meet step 4"
           />
           <div className="card-content">
             <h3>Общение</h3>
