@@ -14,7 +14,7 @@ const MainHeader: React.FC = () => {
         <div className="header-content">
           <h1 className="title">Meet - Найди свою Любовь</h1>
           <p className="description">
-            Встречайте приложение "Meet", где каждый может найти свою вторую половинку...
+            Встречайте приложение &quot;Meet&quot;, где каждый может найти свою вторую половинку...
           </p>
           <div className="button-go-block">
             <a target="_blank" className="news-button go" href="https://t.me/meet_news_ru">Новости Meet</a>

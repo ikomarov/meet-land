@@ -12,7 +12,7 @@ const SuccessStories: React.FC = () => {
         </div>
         <div className="story">
           <h3>Ольга и Игорь</h3>
-          <p>Их история началась с простого "Привет" в Meet...</p>
+          <p>Их история началась с простого Привет в Meet...</p>
         </div>
         <div className="story">
           <h3>Елена и Антон</h3>

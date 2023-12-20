@@ -6,7 +6,7 @@ const FeaturesAndBenefits: React.FC = () => {
     <div className="features-container">
       <h2 className="features-title">Почему Meet?</h2>
       <p className="features-description">
-        Откройте для себя уникальные возможности приложения "Meet", которое
+        Откройте для себя уникальные возможности приложения &quot;Meet&quot;, которое
         предлагает удобный и безопасный способ знакомства и общения.
       </p>
       <div className="features-list">
