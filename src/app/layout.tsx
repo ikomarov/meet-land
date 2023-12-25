@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import React from "react";
 import Head from "next/head";
+import {CDN_URL} from "@/consts/refs";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
     <Head>
-        <link rel="icon" href="https://cdn.lovemeetmet.space/land/public/favicon.png" />
+        <link rel="icon" href={ `${CDN_URL}favicon.png` } />
         <title>Meet - Приложение для знакомств в Telegram</title>
         <meta charSet="utf-8"/>
         <meta property="og:title" content="Meet - Приложение для знакомств в Telegram" key="title" />

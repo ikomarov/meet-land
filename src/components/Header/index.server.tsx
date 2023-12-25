@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import Image from 'next/image'
 
 const MainHeader: React.FC = () => {
   return (
@@ -22,9 +23,10 @@ const MainHeader: React.FC = () => {
           </div>
         </div>
         <div className="header-image">
-          <img
+          <Image
             width={600}
-            src={"meet-main.png"}
+            height={600}
+            src="/meet-main.png"
             alt="Meet App"
           />
         </div>

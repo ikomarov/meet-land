@@ -11,9 +11,11 @@ const HowItWorks: React.FC = () => {
       </p>
       <div className="cards">
         <div className="card">
-          <img
-            src={"30.jpeg"}
-            alt="Meet step 1"
+          <Image
+              width={300}
+              height={540}
+              src="/30.jpeg"
+              alt="Meet step 1"
           />
           <div className="card-content">
             <h3>Регистрация</h3>
@@ -21,9 +23,11 @@ const HowItWorks: React.FC = () => {
           </div>
         </div>
         <div className="card">
-          <img
-            src={"46.jpeg"}
-            alt="Meet step 2"
+          <Image
+              width={300}
+              height={540}
+              src="/46.jpeg"
+              alt="Meet step 2"
           />
           <div className="card-content">
             <h3>Настройка профиля</h3>
@@ -31,9 +35,11 @@ const HowItWorks: React.FC = () => {
           </div>
         </div>
         <div className="card">
-          <img
-            src={"55.jpeg"}
-            alt="Meet step 3"
+          <Image
+              width={300}
+              height={540}
+              src="/55.jpeg"
+              alt="Meet step 3"
           />
           <div className="card-content">
             <h3>Поиск партнеров</h3>
@@ -41,9 +47,11 @@ const HowItWorks: React.FC = () => {
           </div>
         </div>
         <div className="card">
-          <img
-            src={"51.jpeg"}
-            alt="Meet step 4"
+          <Image
+              width={300}
+              height={540}
+              src="/51.jpeg"
+              alt="Meet step 4"
           />
           <div className="card-content">
             <h3>Общение</h3>
