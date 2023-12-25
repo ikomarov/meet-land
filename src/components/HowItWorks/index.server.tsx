@@ -26,7 +26,7 @@ const HowItWorks: React.FC = () => {
           <Image
               width={300}
               height={540}
-              src="/46.jpeg"
+              src="/461.jpeg"
               alt="Meet step 2"
           />
           <div className="card-content">
