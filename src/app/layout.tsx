@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import React from "react";
 import JsonLdScript from "@/components/JsonLdScript/index.server";
+import YaScript from "@/components/YaScript/index.server";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,6 +33,7 @@ export default function RootLayout({
           <meta name="keywords" content="знакомства, любовь, дружба, приложение для знакомств, Meet, Telegram, телеграм"/>
           <meta name="robots" content="index, follow"/>
           <JsonLdScript />
+          <YaScript />
       </head>
       <body className={inter.className}>{children}</body>
       </html>
