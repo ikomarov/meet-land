@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const AWS = require('aws-sdk');
+const mime = require('mime-types'); // Импортируем библиотеку для определения MIME типов
 
-const {BUCKET, CDN_KEY_ACCESS, CDN_SECRET_ACCESS, ENDPOINT} = require('./env.js');
+const { BUCKET, CDN_KEY_ACCESS, CDN_SECRET_ACCESS, ENDPOINT } = require('./env.js');
 
 const s3 = new AWS.S3({
   accessKeyId: CDN_KEY_ACCESS,
@@ -11,22 +12,24 @@ const s3 = new AWS.S3({
   s3ForcePathStyle: true
 });
 
-function uploadDirectory(directory) {
+function uploadDirectory(directory, cdnPath, pathOld = '') {
   const files = fs.readdirSync(directory);
 
   files.forEach(file => {
     const filePath = path.join(directory, file);
-    const fileKey = filePath.substring('.next/'.length);
+    const fileKey = filePath.substring(pathOld.length);
 
     if (fs.lstatSync(filePath).isDirectory()) {
-      uploadDirectory(filePath);
+      // Передаем параметры cdnPath и pathOld при рекурсивном вызове
+      uploadDirectory(filePath, cdnPath, pathOld);
     } else {
       const fileContent = fs.readFileSync(filePath);
       const params = {
         Bucket: BUCKET,
-        Key:  'land/_next/' + fileKey,
+        Key:  cdnPath + fileKey,
         Body: fileContent,
-        ACL: 'public-read' // Установите нужные вам права доступа
+        ACL: 'public-read', // Установите нужные вам права доступа
+        ContentType: mime.lookup(filePath) || 'application/octet-stream' // Устанавливаем MIME тип
       };
 
       s3.upload(params, function(err, data) {
@@ -40,4 +43,5 @@ function uploadDirectory(directory) {
 }
 
 // Запуск загрузки для директории статики
-uploadDirectory('.next/static');
+uploadDirectory('.next/static', 'land/_next/', '.next/');
+uploadDirectory('public', 'land/');

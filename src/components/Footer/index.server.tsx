@@ -7,7 +7,7 @@ const Footer = () => {
       <a target="_blank" className="news-link" href="https://t.me/meet_news_ru">Новости Meet</a>
       <br />
       <p className="footer-cta-about">© Meet 2024</p>
-      <a target="_blank" className="terms-link" href="https://lovemeetmet.space/user-agreement-offer-ru.html">
+      <a target="_blank" className="terms-link" href="https://app.lovemeetmet.space/user-agreement-offer-ru.html">
         Пользовательское соглашение
       </a>
     </div>

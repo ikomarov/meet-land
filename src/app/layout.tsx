@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import React from "react";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +12,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+    <Head>
+        <link rel="icon" href="https://cdn.lovemeetmet.space/land/public/favicon.png" />
         <title>Meet - Приложение для знакомств в Telegram</title>
         <meta charSet="utf-8"/>
         <meta property="og:title" content="Meet - Приложение для знакомств в Telegram" key="title" />
@@ -21,8 +23,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta property="og:type" content="website"/>
         <meta property="og:site_name" content="Meet - Приложение для знакомств в Telegram" />
-        <link rel="icon" href="favicon.png" />
-      </head>
+      </Head>
       <body className={inter.className}>{children}</body>
     </html>
   )
