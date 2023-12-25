@@ -13,9 +13,6 @@
 /.next/
 /out/
 
-# production
-/deploy
-
 # misc
 .DS_Store
 *.pem
