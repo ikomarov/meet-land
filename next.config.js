@@ -7,7 +7,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'cdn.lovemeetmet.space',
         port: '',
-        pathname: 'land/public/**',
+        pathname: 'public/**',
       },
     ],
   },

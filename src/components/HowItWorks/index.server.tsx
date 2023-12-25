@@ -13,7 +13,7 @@ const HowItWorks: React.FC = () => {
         <div className="card">
           <Image
               width={300}
-              height={540}
+              height={300}
               src="/301.jpeg"
               alt="Meet step 1"
           />
@@ -25,9 +25,9 @@ const HowItWorks: React.FC = () => {
         <div className="card">
           <Image
               width={300}
-              height={540}
+              height={300}
               src="/461.jpeg"
-              alt="Meet step 2"
+              alt="Meet step 2 add int"
           />
           <div className="card-content">
             <h3>Настройка профиля</h3>
@@ -37,19 +37,19 @@ const HowItWorks: React.FC = () => {
         <div className="card">
           <Image
               width={300}
-              height={540}
+              height={300}
               src="/551.jpeg"
               alt="Meet step 3"
           />
           <div className="card-content">
             <h3>Поиск партнеров</h3>
-            <p>Нажмите на кнопку <b>Запустить</b> или кнопку <b>Open</b> в telegram боте после регистрации.</p>
+            <p>Нажмите на <b>Запустить</b> или <b>Open</b> в telegram после регистрации.</p>
           </div>
         </div>
         <div className="card">
           <Image
               width={300}
-              height={540}
+              height={300}
               src="/12.jpeg"
               alt="Meet step 4"
           />
