@@ -14,7 +14,7 @@ const HowItWorks: React.FC = () => {
           <Image
               width={300}
               height={540}
-              src="/30.jpeg"
+              src="/301.jpeg"
               alt="Meet step 1"
           />
           <div className="card-content">
@@ -38,7 +38,7 @@ const HowItWorks: React.FC = () => {
           <Image
               width={300}
               height={540}
-              src="/55.jpeg"
+              src="/551.jpeg"
               alt="Meet step 3"
           />
           <div className="card-content">
@@ -50,7 +50,7 @@ const HowItWorks: React.FC = () => {
           <Image
               width={300}
               height={540}
-              src="/51.jpeg"
+              src="/12.jpeg"
               alt="Meet step 4"
           />
           <div className="card-content">
