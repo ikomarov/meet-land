@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import React from "react";
+import JsonLdScript from "@/components/JsonLdScript/index.server";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,13 +18,20 @@ export default function RootLayout({
           <meta charSet="utf-8"/>
           <meta property="og:title" content="Meet - Приложение для знакомств в Telegram" key="title"/>
           <meta property="og:description" name="description"
-                content="Meet - приложение для знакомств, которое помогает людям находить интересные знакомства, дружбу и любовь. Присоединяйтесь к нам сегодня и начните своё путешествие к счастью."
+                content="Meet - приложение для знакомств, которое помогает людям находить интересные знакомства, дружбу и любовь. Используйте Telegram для общения и незабываемых встреч."
                 key="description"/>
-          <meta property="og:image" content="/logo.svg" key="image"/>
+          <link rel="canonical" href="https://www.lovemeetmet.space/"/>
+          <meta name="twitter:title" content="Meet - Приложение для знакомств в Telegram"/>
+          <meta name="twitter:description"
+                content="Meet - приложение для знакомств, которое помогает людям находить интересные знакомства, дружбу и любовь. Используйте Telegram для общения и незабываемых встреч."/>
+          <meta property="og:image" content="https://cdn.lovemeetmet.space/land/public/logo.svg" key="image"/>
           <meta property="og:type" content="website" key="type"/>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <meta property="og:type" content="website"/>
           <meta property="og:site_name" content="Meet - Приложение для знакомств в Telegram"/>
+          <meta name="keywords" content="знакомства, любовь, дружба, приложение для знакомств, Meet, Telegram, телеграм"/>
+          <meta name="robots" content="index, follow"/>
+          <JsonLdScript />
       </head>
       <body className={inter.className}>{children}</body>
       </html>
