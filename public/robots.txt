@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://lovemeetmet.space
+
+# Sitemaps
+Sitemap: https://lovemeetmet.space/sitemap.xml
