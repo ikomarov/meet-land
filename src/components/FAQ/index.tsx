@@ -11,7 +11,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="faq-container">
+    <div className="faq-container" id="questions">
       <h2 className="faq-title">У вас есть вопросы? У нас есть ответы!</h2>
       <div className="faq-content">
         {faqs.map((faq, index) => (

@@ -1,0 +1,71 @@
+.blog-articles-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 80px;
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.article {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    flex: 0 0 calc(25% - 20px); /* 25% для 4 элементов в ряд, учтите gap */
+    /* Убедитесь, что минимальная ширина меньше max-width */
+    min-width: 150px; /* Минимальная ширина блока */
+    max-width: 300px;
+}
+
+
+.article-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 15px;
+}
+
+.article-title {
+    color: #ff74c1;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.article-description {
+    color: #333;
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    .articles-container {
+        justify-content: space-between;
+    }
+
+    .article {
+        width: calc(33.333% - 20px);
+        margin-top: 20px;
+    }
+
+    .blog-articles-container {
+        margin-top: 40px;
+        margin-bottom: 100px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .articles {
+        width: 60%;
+    }
+}

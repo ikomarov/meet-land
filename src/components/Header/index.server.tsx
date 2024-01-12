@@ -8,6 +8,8 @@ const MainHeader: React.FC = () => {
       <div className="top-bar">
         <span className="brand-name">Meet</span>
         <div>
+          <a className="news-link blog-link" href={"#questions"}>Вопросы</a>
+          <a target="_blank" className="news-link blog-link" href="https://t.me/meet_news_ru">Новости</a>
           <a className="news-link blog-link" href="/blog">Наш Блог</a>
           <a target="_blank" className="download-button" href="https://t.me/meet_met_bot?start=landingMainHeader">
             Начать общение
@@ -16,7 +18,7 @@ const MainHeader: React.FC = () => {
       </div>
       <div className="header">
         <div className="header-content">
-          <h1 className="title">Meet - Найди свою Любовь</h1>
+        <h1 className="title">Meet - Найди свою Любовь</h1>
           <p className="description">
             Встречайте приложение &quot;Meet&quot;, где каждый может найти свою вторую половинку...
           </p>

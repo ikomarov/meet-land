@@ -32,6 +32,15 @@
 
 .blog-link {
   margin-right: 20px;
+  background: linear-gradient(135deg, #6dd5ed, #6dd1ea);
+  color: white;
+  border: none;
+  padding: 8px 15px; /* Немного уменьшенный отступ для мобильных */
+}
+
+.blog-link:hover {
+  color: white;
+  text-decoration: underline;
 }
 
 /* Медиа-запрос для экранов больше 768px */
