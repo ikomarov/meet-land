@@ -1,10 +1,36 @@
-import React, { useState } from 'react';
+import React, {useCallback, useState} from 'react';
 import './index.css'
+import {getRequiredHeaders} from "@/utils/get-required-headers";
+import {manageCookie} from "@/utils/cookies";
+import {TELEGRAM_AUTH} from "@/consts/references";
+import {makeSlug} from "@/utils/makeSlug";
 
 interface Article {
-    id: number;
-    content: string;
+    htmlContent: string;
     title: string;
+    slug: string;
+}
+
+async function addNewArticle(params: Article) {
+    try {
+        const cookieValue = manageCookie(TELEGRAM_AUTH);
+        const response = await fetch(`http://localhost:3001/admin/article/save`, {
+            headers: getRequiredHeaders(cookieValue),
+            method: 'POST',
+            body: JSON.stringify(params),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const { code } = await response.json();
+
+        return code === 'SUCCESS';
+    } catch (error: any) {
+        console.error("Fetch error: " + error.message);
+        return false;
+    }
 }
 
 const ArticlesComponent: React.FC = () => {
@@ -12,16 +38,19 @@ const ArticlesComponent: React.FC = () => {
     const [currentTitle, setCurrentTitle] = useState<string>('');
     const [currentContent, setCurrentContent] = useState<string>('');
 
-    const addArticle = () => {
+    const addArticle = useCallback(async () => {
         const newArticle = {
-            id: articles.length + 1,
             title: currentTitle,
-            content: currentContent
-        };
+            htmlContent: currentContent,
+            slug: makeSlug(currentTitle)
+        } as Article;
+
+        await addNewArticle({...newArticle})
+
         setArticles([...articles, newArticle]);
         setCurrentTitle('');
         setCurrentContent('');
-    };
+    }, [currentTitle, currentContent]);
 
     return (
         <div className="articles-container">
@@ -43,9 +72,9 @@ const ArticlesComponent: React.FC = () => {
             <div>
                 <h2>Список статей</h2>
                 {articles.map(article => (
-                    <div key={article.id}>
+                    <div key={article.title}>
                         <h3>{article.title}</h3>
-                        <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                        <div dangerouslySetInnerHTML={{ __html: article.htmlContent }} />
                     </div>
                 ))}
             </div>
