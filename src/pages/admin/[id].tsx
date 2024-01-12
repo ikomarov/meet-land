@@ -1,7 +1,5 @@
-export default function Home() {
-    return (
-        <div>
-            <h1>Welcome to Our Website</h1>
-        </div>
-    );
+import ArticlesComponent from "@/components/ArticlesComponent";
+
+export default function() {
+    return <ArticlesComponent />;
 }

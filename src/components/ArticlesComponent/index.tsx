@@ -4,6 +4,9 @@ import {makeSlug} from "@/utils/makeSlug";
 import {addNewArticle} from "@/requests/add-new-article";
 import {getListArticle} from "@/requests/get-list-article";
 import {deleteArticle} from "@/requests/delete-article";
+import {getArticle} from "@/requests/get-article";
+import {useRouter} from "next/router";
+import {updateArticle} from "@/requests/update-article";
 
 export interface Article {
     htmlContent: string;
@@ -12,9 +15,13 @@ export interface Article {
 }
 
 const ArticlesComponent: React.FC = () => {
+    const router = useRouter();
+    const { id } = router.query;
+
     const [articles, setArticles] = useState<Article[]>([]);
     const [currentTitle, setCurrentTitle] = useState<string>('');
     const [currentContent, setCurrentContent] = useState<string>('');
+    const [loading, setLoading] = useState<boolean>(true);
 
     const addArticle = useCallback(async () => {
         const newArticle = {
@@ -30,6 +37,23 @@ const ArticlesComponent: React.FC = () => {
         setCurrentContent('');
     }, [currentTitle, currentContent]);
 
+    const updateArt = useCallback(async () => {
+        const newArticle = {
+            title: currentTitle,
+            htmlContent: currentContent,
+            slug: id
+        } as Article;
+
+        await updateArticle({...newArticle})
+
+
+        setArticles(articles.map((elem) => {
+            if (elem.slug === id) return newArticle
+
+            return elem
+        }));
+    }, [currentTitle, currentContent, id]);
+
     const deleteArt = useCallback(async (slug: string) => {
         await deleteArticle(slug)
         const arts = await getListArticle()
@@ -38,11 +62,27 @@ const ArticlesComponent: React.FC = () => {
     }, []);
 
     // @ts-ignore
-    useEffect(async () => {
-        const arts = await getListArticle()
+    useEffect(() => {
+        async function fetchData() {
+            const arts = await getListArticle()
 
-        setArticles(arts)
-    }, []);
+            if (id) {
+                const {title, htmlContent} = await getArticle(id.toString())
+
+                setCurrentTitle(title);
+                setCurrentContent(htmlContent);
+            }
+
+            setArticles(arts)
+            setLoading(false)
+        }
+
+        fetchData();
+    }, [id]);
+
+    if (loading) {
+        return <div>...</div>
+    }
 
     return (
         <div className="articles-container">
@@ -60,7 +100,8 @@ const ArticlesComponent: React.FC = () => {
                 rows={10}
                 cols={50}
             />
-            <button onClick={addArticle}>Добавить</button>
+            {id && <button onClick={updateArt}>Обновить</button>}
+            {!id && <button onClick={addArticle}>Добавить</button>}
             <div>
                 <h2>Список статей</h2>
                 {articles.map(article => (
