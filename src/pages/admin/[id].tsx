@@ -1,5 +1,5 @@
 import ArticlesComponent from "@/components/ArticlesComponent";
 
-export default function() {
+export default function Articles() {
     return <ArticlesComponent />;
 }
