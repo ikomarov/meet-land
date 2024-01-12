@@ -3,6 +3,7 @@ import { getRequiredHeaders } from "@/utils/get-required-headers";
 import { manageCookie } from "@/utils/cookies";
 import { TELEGRAM_AUTH } from "@/consts/references";
 import { encodeAuthHeader } from "@/utils/encode64";
+import ArticlesComponent from "@/components/ArticlesComponent";
 
 async function getAdmin(data?: string) {
     try {
@@ -80,7 +81,7 @@ const Admin: React.FC = () => {
     }, [loading, auth]);
 
     if (auth) {
-        return <>Hello Admin</>;
+        return <ArticlesComponent />;
     }
 
     return <div />;
