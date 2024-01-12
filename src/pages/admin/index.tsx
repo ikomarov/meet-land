@@ -1,28 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { getRequiredHeaders } from "@/utils/get-required-headers";
 import { manageCookie } from "@/utils/cookies";
 import { TELEGRAM_AUTH } from "@/consts/references";
 import { encodeAuthHeader } from "@/utils/encode64";
 import ArticlesComponent from "@/components/ArticlesComponent";
-
-async function getAdmin(data?: string) {
-    try {
-        const response = await fetch(`http://localhost:3001/blog/admin`, {
-            headers: getRequiredHeaders(data),
-            method: 'POST',
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const { code } = await response.json();
-        return code === 'SUCCESS';
-    } catch (error: any) {
-        console.error("Fetch error: " + error.message);
-        return false;
-    }
-}
+import {getAdmin} from "@/requests/get-admin";
 
 const Admin: React.FC = () => {
     const [loading, setLoading] = useState(true);

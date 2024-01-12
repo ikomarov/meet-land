@@ -1,36 +1,14 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './index.css'
-import {getRequiredHeaders} from "@/utils/get-required-headers";
-import {manageCookie} from "@/utils/cookies";
-import {TELEGRAM_AUTH} from "@/consts/references";
 import {makeSlug} from "@/utils/makeSlug";
+import {addNewArticle} from "@/requests/add-new-article";
+import {getListArticle} from "@/requests/get-list-article";
+import {deleteArticle} from "@/requests/delete-article";
 
-interface Article {
+export interface Article {
     htmlContent: string;
     title: string;
     slug: string;
-}
-
-async function addNewArticle(params: Article) {
-    try {
-        const cookieValue = manageCookie(TELEGRAM_AUTH);
-        const response = await fetch(`http://localhost:3001/admin/article/save`, {
-            headers: getRequiredHeaders(cookieValue),
-            method: 'POST',
-            body: JSON.stringify(params),
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const { code } = await response.json();
-
-        return code === 'SUCCESS';
-    } catch (error: any) {
-        console.error("Fetch error: " + error.message);
-        return false;
-    }
 }
 
 const ArticlesComponent: React.FC = () => {
@@ -52,6 +30,20 @@ const ArticlesComponent: React.FC = () => {
         setCurrentContent('');
     }, [currentTitle, currentContent]);
 
+    const deleteArt = useCallback(async (slug: string) => {
+        await deleteArticle(slug)
+        const arts = await getListArticle()
+
+        setArticles(arts)
+    }, []);
+
+    // @ts-ignore
+    useEffect(async () => {
+        const arts = await getListArticle()
+
+        setArticles(arts)
+    }, []);
+
     return (
         <div className="articles-container">
             <input
@@ -72,9 +64,17 @@ const ArticlesComponent: React.FC = () => {
             <div>
                 <h2>Список статей</h2>
                 {articles.map(article => (
-                    <div key={article.title}>
-                        <h3>{article.title}</h3>
-                        <div dangerouslySetInnerHTML={{ __html: article.htmlContent }} />
+                    <div key={article.title} style={{padding: '20px'}}>
+                        <a href={"/admin/" + article.slug}>
+                            {article.title}
+                        </a>
+                        <button
+                            style={{marginLeft: "20px", backgroundColor: 'red'}}
+                            onClick={() => deleteArt(article.slug)}
+                        >
+                            Удалить
+                        </button>
+                        <br />
                     </div>
                 ))}
             </div>
