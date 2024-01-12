@@ -1,12 +1,12 @@
 import {manageCookie} from "@/utils/cookies";
-import {TELEGRAM_AUTH} from "@/consts/references";
+import {apiUrl, TELEGRAM_AUTH} from "@/consts/references";
 import {getRequiredHeaders} from "@/utils/get-required-headers";
 import {Article} from "@/components/ArticlesComponent";
 
 export async function deleteArticle(slug: string) {
     try {
         const cookieValue = manageCookie(TELEGRAM_AUTH);
-        const response = await fetch(`http://localhost:3001/admin/article/delete`, {
+        const response = await fetch(`${apiUrl}/admin/article/delete`, {
             headers: getRequiredHeaders(cookieValue),
             method: 'POST',
             body: JSON.stringify({slug}),

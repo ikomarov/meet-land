@@ -1,12 +1,12 @@
 import {manageCookie} from "@/utils/cookies";
-import {TELEGRAM_AUTH} from "@/consts/references";
+import {apiUrl, TELEGRAM_AUTH} from "@/consts/references";
 import {getRequiredHeaders} from "@/utils/get-required-headers";
 import {Article} from "@/components/ArticlesComponent";
 
 export async function updateArticle(params: Article) {
     try {
         const cookieValue = manageCookie(TELEGRAM_AUTH);
-        const response = await fetch(`http://localhost:3001/admin/article/update`, {
+        const response = await fetch(`${apiUrl}/admin/article/update`, {
             headers: getRequiredHeaders(cookieValue),
             method: 'POST',
             body: JSON.stringify(params),

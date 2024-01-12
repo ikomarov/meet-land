@@ -1,8 +1,9 @@
 import {getRequiredHeaders} from "@/utils/get-required-headers";
+import {apiUrl} from "@/consts/references";
 
 export async function getAdmin(data?: string) {
     try {
-        const response = await fetch(`http://localhost:3001/blog/admin`, {
+        const response = await fetch(`${apiUrl}/blog/admin`, {
             headers: getRequiredHeaders(data),
             method: 'POST',
         });
