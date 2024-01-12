@@ -31,11 +31,11 @@
 }
 
 .blog-link {
-  margin-right: 20px;
   background: linear-gradient(135deg, #6dd5ed, #6dd1ea);
   color: white;
   border: none;
   padding: 8px 15px; /* Немного уменьшенный отступ для мобильных */
+  display: none; /* todo надо вернуть на мобилке эти кнопки по нормальном*/
 }
 
 .blog-link:hover {
@@ -53,5 +53,10 @@
     margin-top: 40px;
     font-size: 16px; /* Возвращаем оригинальный размер шрифта */
     display: inline-block;
+  }
+
+  .blog-link {
+    margin-right: 20px;
+    display: inline;
   }
 }
