@@ -7,9 +7,12 @@ const MainHeader: React.FC = () => {
     <>
       <div className="top-bar">
         <span className="brand-name">Meet</span>
-        <a target="_blank" className="download-button" href="https://t.me/meet_met_bot?start=landingMainHeader">
-          Начать общение
-        </a>
+        <div>
+          <a className="news-link blog-link" href="/blog">Наш Блог</a>
+          <a target="_blank" className="download-button" href="https://t.me/meet_met_bot?start=landingMainHeader">
+            Начать общение
+          </a>
+        </div>
       </div>
       <div className="header">
         <div className="header-content">
