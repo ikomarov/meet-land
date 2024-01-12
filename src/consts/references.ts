@@ -1,0 +1,1 @@
+export const TELEGRAM_AUTH = 'telegram-auth'
