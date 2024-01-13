@@ -1,8 +1,15 @@
 const fetchBlogPosts = async () => {
-    // Замените этот URL на URL вашего API
-    const res = await fetch('https://lovemeetmet.space/api/blogs');
-    const { blogs } = await res.json();
-    return blogs.map(post => `/blog/${post.slug}`);
+    try {
+        // Замените этот URL на URL вашего API
+        const res = await fetch('https://lovemeetmet.space/api/blogs', {
+            method: "post"
+        });
+
+        const req = await res.json();
+        return req.blogs.map(post => `/blog/${post.slug}`);
+    } catch (e) {
+        console.log(e)
+    }
 };
 
 module.exports = {
