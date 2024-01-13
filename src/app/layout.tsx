@@ -30,10 +30,16 @@ export default function RootLayout({
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <meta property="og:type" content="website"/>
           <meta property="og:site_name" content="Meet - Приложение для знакомств в Telegram"/>
-          <meta name="keywords" content="знакомства, любовь, дружба, приложение для знакомств, Meet, Telegram, телеграм"/>
+          <meta name="keywords"
+                content="знакомства, любовь, дружба, приложение для знакомств, Meet, Telegram, телеграм"/>
           <meta name="robots" content="index, follow"/>
-          <JsonLdScript />
-          <YaScript />
+          <JsonLdScript/>
+          <YaScript/>
+          <script
+              type="text/javascript"
+              src="https://platform-api.sharethis.com/js/sharethis.js#property=65a297db047cc8001954d2c4&product=inline-share-buttons&source=platform"
+              async="async"
+          />
       </head>
       <body className={inter.className}>{children}</body>
       </html>

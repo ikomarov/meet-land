@@ -1,0 +1,41 @@
+.related-articles {
+    padding: 20px;
+    max-width: 1200px; /* Максимальная ширина блока */
+    margin: 20px auto;
+}
+
+.related-article {
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.related-article p {
+    padding-top: 12px;
+}
+
+.related-article:last-child {
+    border-bottom: none;
+}
+
+.related-article h3 {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.related-article p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.related-title {
+    color: #3498db;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: normal;
+}

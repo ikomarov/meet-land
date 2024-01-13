@@ -5,35 +5,39 @@ import BlogHeader from "@/components/BlogHeader/index.server";
 import {getBlogs} from "@/requests/get-blogs";
 import Footer from "@/components/Footer/index.server";
 import ArticleContent from "@/components/ArticleContent";
+import RelatedArticles from "../../components/RelatedArticles";
 
 export async function getStaticPaths() {
     // Предположим, у вас есть функция для получения всех доступных ID блогов
     const blogs = await getBlogs(); // Возвращает массив ID
 
     // Создаём массив путей для статической генерации
-    const paths = blogs.map(({slug} : {slug: string}) => ({
+    const paths = blogs.map((elem : {slug: string}) => ({
         params: {
-            id: slug
+            id: elem.slug
         },
     }));
 
     return {
         paths,
-        fallback: false,
+        fallback: false
     };
 }
 
 export async function getStaticProps(props: {params: { id: string}}) {
     const blog = await getBlog(props);
+    const moreBlogs = await getBlogs();
 
-    return { props: { blog } };
+    return { props: { blog, moreBlogs: moreBlogs.slice(-3) } };
 }
-export default function Home({ blog }: {blog: Article}) {
+export default function Home({ blog, moreBlogs }: {blog: Article, moreBlogs: Array<Article>}) {
     return (
         <div>
             <BlogHeader title={blog.title} description={blog.description}/>
             <ArticleContent htmlContent={blog.htmlContent}/>
-            <Footer />
+            <div className="sharethis-inline-share-buttons"/>
+            <RelatedArticles articles={moreBlogs}/>
+            <Footer/>
         </div>
     );
 }
