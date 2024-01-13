@@ -24,4 +24,5 @@ module.exports = {
 
         return paths;
     },
+    exclude: ['/admin*']
 };

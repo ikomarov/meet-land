@@ -7,7 +7,7 @@ import {Article} from "@/components/ArticlesComponent";
 import React from "react";
 import {HtmlHead} from "@/components/HtmlHead";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const blogs = await getBlogs();
     return { props: { blogs } };
 }
