@@ -17,11 +17,6 @@ export default function RootLayout({
       <html lang="en">
       <JsonLdScript/>
       <YaScript/>
-      <script
-          type="text/javascript"
-          src="https://platform-api.sharethis.com/js/sharethis.js#property=65a297db047cc8001954d2c4&product=inline-share-buttons&source=platform"
-          async={true}
-      />
       <body className={inter.className}>{children}</body>
       </html>
     )
