@@ -34,6 +34,10 @@
   margin: 10px 0; /* Уменьшенные отступы вокруг историй */
 }
 
+.story:nth-of-type(n+7) {
+  display: none;
+}
+
 .story h3 {
   color: #4ecdc4;
   margin-bottom: 10px;
@@ -69,6 +73,10 @@
     flex: 0 0 33.333%;
     margin: 20px;
     animation: scroll 10s linear infinite;
+  }
+
+  .story:nth-of-type(n+4) {
+    display: block;
   }
 }
 

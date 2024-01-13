@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { manageCookie } from "@/utils/cookies";
-import { TELEGRAM_AUTH } from "@/consts/references";
+import {NEXT_PUBLIC_BOT, TELEGRAM_AUTH} from "@/consts/references";
 import { encodeAuthHeader } from "@/utils/encode64";
 import ArticlesComponent from "@/components/ArticlesComponent";
 import {getAdmin} from "@/requests/get-admin";
@@ -42,7 +42,7 @@ const Admin: React.FC = () => {
         if (!script.current) {
             const scriptElement = document.createElement('script');
             scriptElement.src = "https://telegram.org/js/telegram-widget.js?22";
-            scriptElement.setAttribute('data-telegram-login', 'RainPushBot');
+            scriptElement.setAttribute('data-telegram-login', NEXT_PUBLIC_BOT as string);
             scriptElement.setAttribute('data-size', 'large');
             scriptElement.setAttribute('data-onauth', 'onTelegramAuth(user)');
             scriptElement.setAttribute('data-request-access', 'write');
