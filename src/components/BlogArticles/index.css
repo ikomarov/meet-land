@@ -1,4 +1,5 @@
 .blog-articles-container {
+    display: flex;
     margin-top: 30px;
     margin-bottom: 30px;
     width: 100%;
@@ -7,8 +8,7 @@
 .articles {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
     gap: 80px;
     padding: 20px;
     width: 80%;
@@ -17,15 +17,25 @@
 
 .article {
     background: white;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    flex: 0 0 calc(25% - 20px); /* 25% для 4 элементов в ряд, учтите gap */
+    flex: 0 0 calc(30%);
     /* Убедитесь, что минимальная ширина меньше max-width */
-    min-width: 150px; /* Минимальная ширина блока */
-    max-width: 300px;
+    min-width: 250px; /* Минимальная ширина блока */
+    max-width: 400px;
 }
 
+.article:hover {
+    /* Увеличение тени для создания эффекта приподнятости */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+
+    /* Небольшое увеличение размера элемента */
+    transform: scale(1.05);
+
+    /* Плавный переход для анимационных свойств */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
 
 .article-image {
     width: 100%;
@@ -38,15 +48,23 @@
 }
 
 .article-title {
-    color: #ff74c1;
-    margin-bottom: 10px;
-    font-size: 1.4rem;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    color: #0d83d3;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 20px; /* Меньший размер шрифта для мобильных */
+    width: 100%;
+}
+
+.article-title:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .article-description {
-    color: #333;
-    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px; /* Уменьшенный отступ снизу для мобильных */
+    font-size: 16px; /* Меньший размер шрифта */
+    text-align: left;
 }
 
 @media (min-width: 768px) {

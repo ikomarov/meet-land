@@ -1,0 +1,26 @@
+.article-content {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Максимальная ширина блока */
+    word-wrap: break-word;
+    margin: 0 auto 40px;
+    border-top: none;
+    font-size: 16px;
+}
+
+.article-content p {
+    line-height: 1.6;
+    color: #333;
+    font-size: 16px;
+}
+
+.article-content h1, .article-content h2, .article-content h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+/* Дополнительные стили можно добавить по необходимости */

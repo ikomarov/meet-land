@@ -1,27 +1,26 @@
 import React from 'react';
-import './index.css'; // Путь к вашему CSS-файлу
+import './index.css';
+import {Article} from "@/components/ArticlesComponent";
+import Image from "next/image";
 
-const articles = [
-    { title: "Статья 1", content: "Содержимое статьи 1", image: "/meet-main.png" },
-    { title: "Статья 2", content: "Содержимое статьи 2", image: "/meet-main.png" },
-    { title: "Статья 3", content: "Содержимое статьи 3", image: "/meet-main.png" },
-    { title: "Статья 4", content: "Содержимое статьи 3", image: "/meet-main.png" },
-    { title: "Статья 5", content: "Содержимое статьи 3", image: "/meet-main.png" },
-    // Другие статьи
-];
-
-const BlogArticles = () => {
+const BlogArticles = ({blogs}: {blogs: Array<Article>}) => {
     return (
         <div className="blog-articles-container">
             <div className="articles">
-                {articles.map((article, index) => (
-                    <div key={index} className="article">
-                        <img src={article.image} alt={article.title} className="article-image" />
+                {blogs.map((article, index) => (
+                    <a key={index} className="article" href={'/blog/' + article.slug}>
+                        <Image
+                            width={400}
+                            height={400}
+                            src={article.image ? `/blog/${article.image}` : '/blog/logo-1.jpg'}
+                            className="article-image"
+                            alt={article.title}
+                        />
                         <div className="article-content">
                             <h2 className="article-title">{article.title}</h2>
-                            <p className="article-description">{article.content}</p>
+                            <p className="article-description">{article.description}</p>
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
         </div>
