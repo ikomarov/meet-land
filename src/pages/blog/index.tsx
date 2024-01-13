@@ -4,9 +4,8 @@ import BlogArticles from "@/components/BlogArticles";
 import Footer from "@/components/Footer/index.server";
 import {getBlogs} from "@/requests/get-blogs";
 import {Article} from "@/components/ArticlesComponent";
-import Head from "next/head";
 import React from "react";
-import {HtmlHead} from "../../components/HtmlHead";
+import {HtmlHead} from "@/components/HtmlHead";
 
 export async function getStaticProps() {
     const blogs = await getBlogs();

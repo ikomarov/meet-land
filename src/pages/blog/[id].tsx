@@ -6,9 +6,8 @@ import {getBlogs} from "@/requests/get-blogs";
 import Footer from "@/components/Footer/index.server";
 import ArticleContent from "@/components/ArticleContent";
 import RelatedArticles from "../../components/RelatedArticles";
-import Head from "next/head";
 import React from "react";
-import {HtmlHead} from "../../components/HtmlHead";
+import {HtmlHead} from "@/components/HtmlHead";
 
 export async function getStaticPaths() {
     // Предположим, у вас есть функция для получения всех доступных ID блогов
