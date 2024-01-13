@@ -11,7 +11,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
+  // @ts-ignore
+    return (
       <html lang="en">
       <head>
           <title>Meet - Приложение для знакомств в Telegram</title>
@@ -38,7 +39,7 @@ export default function RootLayout({
           <script
               type="text/javascript"
               src="https://platform-api.sharethis.com/js/sharethis.js#property=65a297db047cc8001954d2c4&product=inline-share-buttons&source=platform"
-              async="async"
+              async={true}
           />
       </head>
       <body className={inter.className}>{children}</body>

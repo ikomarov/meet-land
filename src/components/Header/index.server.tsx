@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import Image from 'next/image'
+import Link from "next/link";
 
 const MainHeader: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const MainHeader: React.FC = () => {
         <span className="brand-name">Meet</span>
         <div>
           {/*<a target="_blank" className="news-link blog-link" href="https://t.me/meet_news_ru">Новости</a>*/}
-          <a className="news-link blog-link" href="/blog">Наш Блог</a>
+          <Link className="news-link blog-link" href="/blog">Наш Блог</Link>
           <a target="_blank" className="download-button" href="https://t.me/meet_met_bot?start=landingMainHeader">
             Начать общение
           </a>
