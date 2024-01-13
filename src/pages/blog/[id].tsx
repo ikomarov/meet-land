@@ -6,6 +6,9 @@ import {getBlogs} from "@/requests/get-blogs";
 import Footer from "@/components/Footer/index.server";
 import ArticleContent from "@/components/ArticleContent";
 import RelatedArticles from "../../components/RelatedArticles";
+import Head from "next/head";
+import React from "react";
+import {HtmlHead} from "../../components/HtmlHead";
 
 export async function getStaticPaths() {
     // Предположим, у вас есть функция для получения всех доступных ID блогов
@@ -31,8 +34,11 @@ export async function getStaticProps(props: {params: { id: string}}) {
     return { props: { blog, moreBlogs: moreBlogs.slice(-3) } };
 }
 export default function Home({ blog, moreBlogs }: {blog: Article, moreBlogs: Array<Article>}) {
+    if (!blog) return <div />
+
     return (
         <div>
+            <HtmlHead/>
             <BlogHeader title={blog.title} description={blog.description}/>
             <ArticleContent htmlContent={blog.htmlContent}/>
             <div className="sharethis-inline-share-buttons"/>

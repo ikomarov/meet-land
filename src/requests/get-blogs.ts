@@ -11,7 +11,7 @@ export async function getBlogs() {
 
         const { blogs } = await response.json();
 
-        return blogs;
+        return blogs || [];
     } catch (error: any) {
         console.error("Fetch error: " + error.message);
         return false;

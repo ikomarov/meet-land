@@ -5,6 +5,7 @@ const fetchBlogPosts = async () => {
     return blogs.map(post => `/blog/${post.slug}`);
 };
 
+//TODO добавить еще сам blogs
 module.exports = {
     siteUrl: 'https://lovemeetmet.space',
     generateRobotsTxt: true,

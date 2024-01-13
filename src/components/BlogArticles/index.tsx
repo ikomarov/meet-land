@@ -7,7 +7,7 @@ const BlogArticles = ({blogs}: {blogs: Array<Article>}) => {
     return (
         <div className="blog-articles-container">
             <div className="articles">
-                {blogs.map((article, index) => (
+                {blogs&& blogs.map((article, index) => (
                     <a key={index} className="article" href={'/blog/' + article.slug}>
                         <Image
                             width={400}
