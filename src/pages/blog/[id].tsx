@@ -38,7 +38,12 @@ export default function Home({ blog, moreBlogs }: {blog: Article, moreBlogs: Arr
 
     return (
         <div>
-            <HtmlHead/>
+            <HtmlHead
+                title={blog.title}
+                url={"https://lovemeetmet.space/blog/"+blog.slug}
+                description={blog.description}
+                keywords={blog?.keywords}
+            />
             <BlogHeader title={blog.title} description={blog.description}/>
             <ArticleContent htmlContent={blog.htmlContent}/>
             <div className="sharethis-inline-share-buttons"/>
