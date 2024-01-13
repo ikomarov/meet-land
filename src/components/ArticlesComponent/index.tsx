@@ -14,6 +14,7 @@ export interface Article {
     slug: string;
     image: string;
     description: string;
+    keywords: string;
 }
 
 const ArticlesComponent: React.FC = () => {
@@ -23,6 +24,7 @@ const ArticlesComponent: React.FC = () => {
     const [articles, setArticles] = useState<Article[]>([]);
     const [currentImage, setCurrentImage] = useState<string>('');
     const [currentTitle, setCurrentTitle] = useState<string>('');
+    const [currentKeys, setCurrentKeys] = useState<string>('');
     const [currentContent, setCurrentContent] = useState<string>('');
     const [currentDescription, setCurrentDescription] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(true);
@@ -33,7 +35,8 @@ const ArticlesComponent: React.FC = () => {
             htmlContent: currentContent,
             slug: makeSlug(currentTitle),
             image: currentImage,
-            description: currentDescription
+            description: currentDescription,
+            keywords: currentKeys
         } as Article;
 
         await addNewArticle({...newArticle})
@@ -43,7 +46,8 @@ const ArticlesComponent: React.FC = () => {
         setCurrentContent('');
         setCurrentImage('');
         setCurrentDescription('')
-    }, [currentTitle, currentContent, currentImage, currentDescription]);
+        setCurrentKeys('')
+    }, [currentTitle, currentContent, currentImage, currentDescription, currentKeys]);
 
     const updateArt = useCallback(async () => {
         const newArticle = {
@@ -51,7 +55,8 @@ const ArticlesComponent: React.FC = () => {
             htmlContent: currentContent,
             slug: id,
             image: currentImage,
-            description: currentDescription
+            description: currentDescription,
+            keywords: currentKeys
         } as Article;
 
         await updateArticle({...newArticle})
@@ -62,7 +67,7 @@ const ArticlesComponent: React.FC = () => {
 
             return elem
         }));
-    }, [currentTitle, currentContent, currentImage, currentDescription, id]);
+    }, [currentTitle, currentContent, currentImage, currentDescription, id, currentKeys]);
 
     const deleteArt = useCallback(async (slug: string) => {
         await deleteArticle(slug)
@@ -77,12 +82,13 @@ const ArticlesComponent: React.FC = () => {
             const arts = await getListArticle()
 
             if (id) {
-                const {title, htmlContent, image, description} = await getArticle(id.toString())
+                const {title, htmlContent, image, description, keywords} = await getArticle(id.toString())
 
                 setCurrentTitle(title);
                 setCurrentContent(htmlContent);
                 setCurrentImage(image);
                 setCurrentDescription(description);
+                setCurrentKeys(keywords)
             }
 
             setArticles(arts)
@@ -110,7 +116,14 @@ const ArticlesComponent: React.FC = () => {
                 type="text"
                 value={currentImage}
                 onChange={(e) => setCurrentImage(e.target.value)}
-                placeholder="Имя изображения"
+                placeholder="Изображение"
+            />
+            <input
+                className="title-input"
+                type="text"
+                value={currentKeys}
+                onChange={(e) => setCurrentKeys(e.target.value)}
+                placeholder="Ключевые слова"
             />
             <textarea
                 value={currentDescription}
