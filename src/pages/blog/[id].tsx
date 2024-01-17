@@ -8,6 +8,8 @@ import ArticleContent from "@/components/ArticleContent";
 import RelatedArticles from "../../components/RelatedArticles";
 import React from "react";
 import {HtmlHead} from "@/components/HtmlHead";
+import YaScript from "@/components/YaScript/index.server";
+import JsonLdScript from "@/components/JsonLdScript/index.server";
 
 export async function getStaticPaths() {
     // Предположим, у вас есть функция для получения всех доступных ID блогов
@@ -37,6 +39,8 @@ export default function Home({ blog, moreBlogs }: {blog: Article, moreBlogs: Arr
 
     return (
         <div>
+            <JsonLdScript/>
+            <YaScript/>
             <HtmlHead
                 title={blog.title}
                 url={"https://lovemeetmet.space/blog/"+blog.slug}

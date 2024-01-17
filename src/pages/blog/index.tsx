@@ -6,6 +6,8 @@ import {getBlogs} from "@/requests/get-blogs";
 import {Article} from "@/components/ArticlesComponent";
 import React from "react";
 import {HtmlHead} from "@/components/HtmlHead";
+import YaScript from "@/components/YaScript/index.server";
+import JsonLdScript from "@/components/JsonLdScript/index.server";
 
 export async function getServerSideProps() {
     const blogs = await getBlogs();
@@ -15,6 +17,8 @@ export async function getServerSideProps() {
 export default function Articles({blogs} : {blogs: Array<Article>}) {
     return (
         <div>
+            <JsonLdScript/>
+            <YaScript/>
             <HtmlHead
                 title="Блог - Meet"
                 url="https://lovemeetmet.space/blog"
