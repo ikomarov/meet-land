@@ -9,7 +9,7 @@ type RelatedArticlesProps = {
 const RelatedArticles: React.FC<RelatedArticlesProps> = ({ articles }) => {
     return (
         <div className="related-articles">
-            <h2 className="related-title">Вам может понравится</h2>
+            <h2 className="related-title">Еще статьи по теме</h2>
             <div>
                 {articles.map((article, index) => (
                     <div key={index} className="related-article">

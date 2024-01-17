@@ -1,5 +1,7 @@
 import Head from "next/head";
 import React from "react";
+import JsonLdScript from "@/components/JsonLdScript/index.server";
+import YaScript from "@/components/YaScript/index.server";
 
 interface HtmlHeadProps {
     title?: string;
@@ -48,6 +50,8 @@ export function HtmlHead({
             <meta name="twitter:data2" content="Меньше минуты"/>
             <meta name="keywords" content={keywords}/>
             <meta name="robots" content="index, follow"/>
+            <JsonLdScript/>
+            <YaScript/>
         </Head>
     )
 }
